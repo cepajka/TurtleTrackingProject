@@ -59,12 +59,17 @@ for key, value in date_dict.items():
     if value == user_date:
         keys.append(key)
 
-#Reveal locations for each key in matching_keys
-for key in keys: 
-    location = location_dict[key]
-    lat = location[0]
-    lng = location[1]
-    print(f"On {user_date}, Sara the the turtle was seen at {lat}d Lat, {lng}d Lng.")
-    #Print the location of sara
-    #print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}")
+# Report whether no keys were found
+if len(keys) == 0:
+    print(f"Sara was not located on {user_date}")
+else:
+
+    #Reveal locations for each key in matching_keys
+    for key in keys: 
+        location = location_dict[key]
+        lat = location[0]
+        lng = location[1]
+        print(f"On {user_date}, Sara the the turtle was seen at {lat}d Lat, {lng}d Lng.")
+        #Print the location of sara
+        #print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}")
 
